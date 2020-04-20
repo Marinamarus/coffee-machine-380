@@ -12,21 +12,21 @@
   </head>
   <body>
     <div class = "container">
-      <div class = "row coffee-machine">  
+      <div class = "row coffee-machine" id="coffee">  
         <div class = "col-6 coffee-list d-flex flex-column justify-content-around">
-        <div class = "coffee-item">
+        <div class = "coffee-item" onclick="buyCoffee('Американо',50,this)">
          <img src = "IMG/americano.png" alt = "">
           <span> Aмерикано - 50 рублей </span>
          </div>
-        <div class = "coffee-item">
+        <div class = "coffee-item" onclick="buyCoffee('Капучино',90,this)">
           <img src = "IMG/cappuccino.png" alt = "">
           <span> Капучино - 90 рублей </span>
          </div>
-        <div class = "coffee-item">
+        <div class = "coffee-item" onclick="buyCoffee('Эспрессо', 60,this)">
           <img src = "IMG/espresso.png"alt= "">
           <span> Эспрессо - 60 рублей </span>
         </div>
-        <div class = "coffee-item">
+        <div class = "coffee-item" onclick="buyCoffee('Латте', 70,this)">
           <img src = "IMG/latte.jpg" alt= "">
           <span> Латте - 70 рублей </span>
          </div>
@@ -34,9 +34,9 @@
        <div class = "col-6 coffee-oper">
          <div class = "row p-3">
            <div class = "col-6">
-             <div class = "displey">
-               <p class = "displey-text"> Выберите КОФЕ</p>
-               <div class="progress">
+             <div class = "display">
+               <p class = "display-text"> Выберите </p>
+               <div class= "progress">
                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
                 </div>
                </div>
@@ -62,6 +62,9 @@
       </div>
      </div> 
     </div> 
+    
+    <script src="script.js"></script> 
+    <script src="coffee.js"></script> 
     <script src= "https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
