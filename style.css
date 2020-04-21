@@ -1,11 +1,13 @@
 .coffee-machine {
+ 
   border :2px solid black;
   margin-top: 75px;
 }
 
 .coffee-list {
- background: lightgrey;
+ background: red;
  background-size: cover;
+ 
 }
 
 .coffee-item {
@@ -30,6 +32,7 @@
  .coffee-item span {
    color : white;
    margin-left: 15px;
+   
  } 
  
  .displey {
@@ -40,20 +43,21 @@
 
 .coffee-cup img{
   width:100%;
-} 
+  opacity:0;
+  } 
  
  .atm img {
  width:100%;  
  } 
 
 .change-box {
- border:2px solid black; 
- background: red;
+ 
+ background: grey;
  height : 100px;
 }
 
 .coffee-oper{
  background: lightgrey; 
-}
+ }
   
   

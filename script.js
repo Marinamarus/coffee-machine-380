@@ -73,7 +73,7 @@
  /*let coffeeMachine = document.querySelector(".cofee-machine");
  coffeeMachine.style.position ="absolute";
  */
- 
+ /*
   let interval = setInterval(trashConsole, 1000)
   
   let changeButton = document.querySelector(".btn");
@@ -84,7 +84,7 @@
   console.log(Math.random() );  
   
  }
- 
+ */
  
  
  

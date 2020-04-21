@@ -35,12 +35,13 @@
          <div class = "row p-3">
            <div class = "col-6">
              <div class = "display">
-               <p class = "display-text"> Выберите </p>
+               <p class = "display-text"> Выберите  </p>
                <div class= "progress">
-               <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+               <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
                 </div>
                </div>
-              <div class = "coffee-cup"><img src = "IMG/cappuccino.png" alt = "">
+              <div class = "coffee-cup">
+               <img class = "d-none" src = "IMG/cappuccino.png"alt = "">
             </div>
            </div>
            <div class = "col-6">
