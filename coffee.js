@@ -126,8 +126,8 @@ function takeMoney(event) {
  
  if ( billLeftTopCorner.x > atmLeftTopCorner.x //левый меньше центра/////
     && billRightTopCorner.x < atmRightTopCorner.x
-     && billLeftTopCorner.y > atmLeftTopCorner.y
-      && billLeftTopCorner.y < atmLeftBottomCorner.y 
+    && billLeftTopCorner.y > atmLeftTopCorner.y
+    && billLeftTopCorner.y < atmLeftBottomCorner.y 
    ) {
   return true; 
   } else {
