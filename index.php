@@ -63,7 +63,11 @@
       </div>
      </div> 
     </div> 
-    
+    <div class = "bills">
+      <img src="IMG/50rub.jpg" alt="">
+      <img src="IMG/100rub.jpg" alt="">
+      <img src="IMG/500rub.jpg" alt="">
+    </div>
     <script src="script.js"></script> 
     <script src="coffee.js"></script> 
     <script src= "https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
