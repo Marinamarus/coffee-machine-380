@@ -1,25 +1,26 @@
 "use strict";
-/*let state = "waiting";
+let state = "waiting";
 
 let cupImg =document.querySelector(".coffee-cup img");
 let progressBar = document.querySelector(".progress-bar");
+let balanceInput=document.querySelector("input[placeholder='Баланс']");
 
-cupImg.onclick = takeCoffee;*/
+cupImg.onclick = takeCoffee;
 //this
 
 // <div class 
 
-/*console.log(this);
+/*сonsole.log(this);
 let elem = document.querySelectorAll(".coffee-item");
 elem[1].onclick = function() {
  buyCoffee('Американо', 50, this)"
 }
 */
-/*function buyCoffee(name,price,element) {
+ function buyCoffee(name,price,element) {
   if (state != "waiting") {
    return;  
   }
-    let balanceInput=document.querySelector("input[placeholder='Баланс']");
+   
     if (+balanceInput.value < price) {  //и 
     changeDisplayText ("Недостаточно средств"); 
     balanceInput.style.border =" 2px solid red";
@@ -71,7 +72,7 @@ function takeCoffee() {
 function changeDisplayText(text) {
   let displayText = document.querySelector(".display-text");
   displayText.innerHTML =text;
-}*/
+}
                           //КУПЮРЫ 
   let bills = document.querySelectorAll(".bills img");
   for(let i =0; i<bills.length; i ++) {
@@ -103,10 +104,15 @@ function takeMoney(event) {
   bill.style.top = event.clientY - billWidth/2 + "px";
   bill.style.left = event.clientX- billHeight/2 + "px";
     
-  }    
+  } 
+  
    bill.onmouseup = function() {
    window.onmousemove = null;
-    console.log( inAtm(bill) );
+    if( inAtm( bill) ){  // можно сюда музыку подключить
+    let billCost = + bill.getAttribute('cost'); 
+    balanceInput.value = +balanceInput.value +billCost;
+    bill.remove();
+    }
   }
   
  }
@@ -135,6 +141,56 @@ function takeMoney(event) {
  }
 
 }
+
+                           //СДАЧА
+                           
+  let changeButton =document.querySelector(".change-btn");
+  
+  changeButton.onclick = takeChange;
+   
+function takeChange() {
+      tossCoin("10");
+  }
+  
+function tossCoin(cost) {
+  let cnangeBox = document.querySelector(".change-box");
+  cnangeBox.style.position ="relative";
+  let cnangeBoxCoords = cnangeBox.getBoundingClientRect(); //нашли координаты нашего cnangeBox
+  let randomWidth =getRandomInt(0, cnangeBoxCoords.width = 50);
+  let randomHeigth =getRandomInt(0, cnangeBoxCoords.heigth= 50);
+  console.log(randomWidth, randomHeigth);
+  
+  let coin = document.createElement("img");
+  coin.setAttribute('src', 'IMG/10rub.png');
+  coin.style.width ="50px";
+  coin.style.heigth ="50px";
+  cnangeBox.append(coin);
+  coin.style.position ="absolute";
+  
+  coin.style.top= randomHeigth +"px";
+  coin.style.left = randomWidth +"px";
+    
+    //coin.style.display ="inline-block";
+  
+  //cnangeBox.prepend(coin);  // в начало элемента
+  //cnangeBox.append(coin); // в конец элемента
+  //cnangeBox.before(coin) //над элементом
+  //cnangeBox.replaceWith (coin) //замена
+  }
+
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min;//Максимум не включается, минимум включается
+  }
+
+  
+
+
+
+
+
+
 
 
 

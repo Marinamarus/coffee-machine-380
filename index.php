@@ -35,7 +35,7 @@
          <div class = "row p-3">
            <div class = "col-6">
              <div class = "display">
-               <p class = "display-text"> Выберите  </p>
+               <p class = "display-text">Выберите</p>
                <div class= "progress">
                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
                 </div>
@@ -46,7 +46,7 @@
            </div>
            <div class = "col-6">
             <div class="input-group mb-3">
-             <input type="text" class="form-control" placeholder = "Баланс" aria-label="Имя получателя" aria-describedby="basic-addon2">
+             <input type="text" class="form-control" placeholder = "Баланс" aria-label="Имя получателя" aria-describedby="basic-addon2" readonly>
                   <div class="input-group-append">
               <span class="input-group-text" id="basic-addon2">&#8381;</span>
                </div>
@@ -54,7 +54,7 @@
              <div class="atm">
             <img src = "IMG/bill_acc.png" alt = "">  
             </div>
-            <button class="btn btn-primary btn-block mt-3">Сдача</button>
+            <button class="btn btn-primary btn-block mt-3 change-btn">Сдача</button>
             <div class="change-box mt-3"></div>
            </div>
           </div>
@@ -64,9 +64,9 @@
      </div> 
     </div> 
     <div class = "bills">
-      <img src="IMG/50rub.jpg" alt="">
-      <img src="IMG/100rub.jpg" alt="">
-      <img src="IMG/500rub.jpg" alt="">
+      <img src="IMG/50rub.jpg" alt="" cost="50">
+      <img src="IMG/100rub.jpg" alt="" cost="100">
+      <img src="IMG/500rub.jpg" alt="" cost="500">
     </div>
     <script src="script.js"></script> 
     <script src="coffee.js"></script> 
