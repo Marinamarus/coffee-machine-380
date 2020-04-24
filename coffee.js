@@ -146,30 +146,85 @@ function takeMoney(event) {
                            
   let changeButton =document.querySelector(".change-btn");
   
-  changeButton.onclick = takeChange;
-   
-function takeChange() {
-      tossCoin("10");
+   changeButton.onclick = function() {
+   let cnangeBox = document.querySelector(".change-box");
+   let coins = cnangeBox.querySelectorAll ("img");
+    if (coins.length == 0 ) {
+    if(balanceInput.value == 0) {
+     return;  
+    }  
+    changeButton.innerHTML = "Забрать сдачу";
+     takeChange();
+    } else {
+    changeButton.innerHTML = "Сдача";
+     for(let i = 0; i < coins.length; i++) {
+      coins[i].remove(); 
+     }
+    }
+   } 
+  function takeChange() {
+    if(balanceInput.value == 0) {
+      return;
+    }
+    if(balanceInput.value >= 10) {
+     balanceInput.value -=10;
+     tossCoin("10");
+     takeChange();
+    }else if(balanceInput.value >= 5) {
+     balanceInput.value -=5;
+     tossCoin("5");
+     takeChange();
+    } else if(balanceInput.value >= 2){
+     balanceInput.value -=2;
+     tossCoin("2");
+     takeChange();
+    } else {
+     balanceInput.value -= 1;
+     tossCoin("1");
+     takeChange();
+    }
   }
   
-function tossCoin(cost) {
-  let cnangeBox = document.querySelector(".change-box");
+ function tossCoin(cost) {
+  let imgSrc = "";
+  switch (cost) {
+    case "10":
+      imgSrc = "IMG/10rub.png";
+      break;
+    case "5":
+     imgSrc = "IMG/5rub.png";
+      break;
+    case "2":
+      imgSrc = "IMG/2rub.png";
+      break;
+    case "1":
+     imgSrc = "IMG/1rub.png";
+      break;
+  }
+  
+  let cnangeBox = document.querySelector(".change-box"); //
   cnangeBox.style.position ="relative";
+  
   let cnangeBoxCoords = cnangeBox.getBoundingClientRect(); //нашли координаты нашего cnangeBox
-  let randomWidth =getRandomInt(0, cnangeBoxCoords.width = 50);
-  let randomHeigth =getRandomInt(0, cnangeBoxCoords.heigth= 50);
-  console.log(randomWidth, randomHeigth);
+  let randomWidth = getRandomInt(0, cnangeBoxCoords.width  - 50);
+  let randomHeigth = getRandomInt(0, cnangeBoxCoords.heigth -  50);
+  
   
   let coin = document.createElement("img");
-  coin.setAttribute('src', 'IMG/10rub.png');
+  coin.setAttribute('src', imgSrc);
   coin.style.width ="50px";
   coin.style.heigth ="50px";
-  cnangeBox.append(coin);
+  coin.style.cursor ="pointer";
   coin.style.position ="absolute";
-  
   coin.style.top= randomHeigth +"px";
   coin.style.left = randomWidth +"px";
-    
+  cnangeBox.append(coin); 
+  
+  coin.onclick = function() {
+    coin.remove();
+  }
+  
+  
     //coin.style.display ="inline-block";
   
   //cnangeBox.prepend(coin);  // в начало элемента
